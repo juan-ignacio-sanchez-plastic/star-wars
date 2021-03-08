@@ -4,7 +4,7 @@ import { Character } from '../';
 
 import { getData } from '../../helpers';
 
-import './CharacterList.sass';
+import './CharacterList.scss';
 
 const CharacterList = () => {
   const [characters, setCharacters] = useState([]);
