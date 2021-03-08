@@ -1,0 +1,9 @@
+{
+  "singleQuote": false,
+  "printWidth": 120,
+  "tabWidth": 2,
+  "useTabs": false,
+  "quoteProps": "consistent",
+  "arrowParens": "always",
+  "endOfLine": "lf"
+}
