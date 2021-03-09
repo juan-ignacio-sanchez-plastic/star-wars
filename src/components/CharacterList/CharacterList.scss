@@ -13,38 +13,3 @@
 .CharacterList__footer {
   text-align: center;
 }
-
-.CharacterList__footer__loadMore {
-  width: 250px;
-  height: 80px;
-  background-color: black;
-  color: white;
-  border: 2px solid $baseColor;
-  border-radius: 4px;
-  outline: none;
-  font-size: 1.5rem;
-  position: relative;
-
-  &:hover {
-    cursor: pointer;
-  }
-
-  &:hover::before {
-    left: 0;
-    right: 0;
-    opacity: 1;
-    transition: 0.5s all ease;
-  }
-
-  &:before {
-    position: absolute;
-    top: 0;
-    left:50%;
-    right: 50%;
-    bottom: 0;
-    opacity: 0;
-    content: '';
-    background-color: rgba($baseColor, 0.5);
-    transition: 3s all ease;  
-  }
-}
