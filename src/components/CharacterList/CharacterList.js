@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-import { Character } from '../';
+import { CharacterListItem } from '../';
 
 import { getData } from '../../helpers';
 
@@ -42,7 +42,7 @@ const CharacterList = () => {
         {
           characters.map((character, i) => {
             character.id = i + 1;
-            return <Character character={character} key={character.id} />
+            return <CharacterListItem character={character} key={character.id} />
           })
         }
       </div>

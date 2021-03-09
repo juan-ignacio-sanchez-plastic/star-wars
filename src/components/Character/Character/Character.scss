@@ -1,0 +1,56 @@
+.Character__header a {
+  text-decoration: none;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.Character__header__title {
+  text-decoration: underline;
+}
+
+.Character__body__title {
+  text-align: center;
+}
+
+.Character__body__features {
+  display: flex;
+  justify-content: center;
+
+  ul {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    list-style: none;
+    width: 50%;
+
+    li {
+      list-style: none;
+      display: flex;
+      padding: 20px;
+    }
+  }
+}
+
+.Character__body__filmsCount {
+  text-align: center;
+}
+
+.Character__body__filmsList {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  ul {
+    list-style: none;
+    width: max-content;
+    padding: 0;
+    
+    li {
+      &:before {
+        content: '-';
+      }
+    }
+  }
+}

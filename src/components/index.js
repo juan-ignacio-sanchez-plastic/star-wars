@@ -1,4 +1,4 @@
 import CharacterList from './CharacterList/CharacterList';
-import Character from './Character/Character';
+import { CharacterListItem, Character } from './Character';
 
-export { CharacterList, Character };
+export { CharacterList, CharacterListItem, Character };
