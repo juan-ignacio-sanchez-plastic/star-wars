@@ -8,10 +8,12 @@ import './App.scss';
 function App () {
   return (
     <div className="App">
-      <Router>
-        <Route exact path='/'><Home /></Route>
-        <Route path='/character-details/:characterID/:characterName'><CharacterDetails /></Route>
-      </Router>
+      <div className='twinkling'>
+        <Router>
+          <Route exact path='/'><Home /></Route>
+          <Route path='/character-details/:characterID/:characterName'><CharacterDetails /></Route>
+        </Router>
+      </div>
     </div>
   );
 }
