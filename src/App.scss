@@ -1,4 +1,4 @@
-$baseColor: rgba(254, 239, 109, 0.75);
+$primary-color: rgba(254, 239, 109, 0.75);
 
 .App {
   background-image: url('./assets/images/background.png');
@@ -17,9 +17,9 @@ $baseColor: rgba(254, 239, 109, 0.75);
 
 ::-webkit-scrollbar-thumb {
   border-radius: 3px;
-  background: rgba($baseColor, 0.07);
+  background: rgba($primary-color, 0.07);
   
   &:hover {
-    background: rgba($baseColor, 0.2);
+    background: rgba($primary-color, 0.2);
   }
 }
