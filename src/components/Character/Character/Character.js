@@ -59,8 +59,6 @@ const Character = () => {
                   {
                     character.films.map((film, i) => <li key={i}>
                       {film.title}:  {moment(film.release_date, 'YYYY').fromNow()}
-                      {console.log('film', film)}
-                      {console.log('i', i)}
                     </li>)
                   }
                 </ul>
