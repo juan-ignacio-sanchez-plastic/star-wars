@@ -1,0 +1,64 @@
+@import '../../../App.scss';
+
+.CharacterListItem {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: black;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 30px;
+  -webkit-box-shadow: 0px 4px 5px 5px rgba(129, 121, 121, 0.75);
+  -moz-box-shadow: 0px 4px 5px 5px rgba(129, 121, 121, 0.75);
+  box-shadow: 0px 4px 5px 5px rgba(129, 121, 121, 0.75);
+  transition: all 0.5s;
+
+  &:hover {
+    transform: scale(1.05);
+    background-color: rgb(9, 9, 9);
+    -webkit-box-shadow: 0px 4px 5px 5px $baseColor;
+    -moz-box-shadow: 0px 4px 5px 5px $baseColor;
+    box-shadow: 0px 0px 5px 5px $baseColor;
+  }
+}
+
+.CharacterListItem__header {
+  margin-bottom: 80px;
+  width: fit-content;
+}
+
+.CharacterListItem__header__title__name {
+  margin: 0;
+  
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.CharacterListItem__body {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+@media only screen and (min-width: 768px) {
+  .CharacterListItem {
+    width: 25%;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .CharacterListItem {
+    margin-bottom: 50px;
+  }
+  
+  .CharacterListItem:hover {
+    transform: scale(1.1);
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .CharacterListItem {
+    width: 28%;
+  }
+}

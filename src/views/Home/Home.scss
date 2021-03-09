@@ -1,0 +1,27 @@
+.Home {
+  padding: 50px 20px;
+}
+
+.Home__header {
+  text-align: center;
+}
+
+.Home__header__logo {
+  width: 100%;
+}
+
+@media only screen and (min-width: 768px) {
+  .Home__header__logo {
+    width: 30%;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .Home__header__logo {
+    width: 20%;
+  }
+
+  .Home {
+    padding: 50px;
+  }
+}
