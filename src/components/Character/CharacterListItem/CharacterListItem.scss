@@ -1,6 +1,6 @@
-@import '../../App.scss';
+@import '../../../App.scss';
 
-.Character {
+.CharacterListItem {
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -22,12 +22,12 @@
   }
 }
 
-.Character__header {
+.CharacterListItem__header {
   margin-bottom: 80px;
   width: fit-content;
 }
 
-.Character__header__title__name {
+.CharacterListItem__header__title__name {
   margin: 0;
   
   &:hover {
@@ -35,30 +35,30 @@
   }
 }
 
-.Character__body {
+.CharacterListItem__body {
   width: 100%;
   display: flex;
   justify-content: space-between;
 }
 
 @media only screen and (min-width: 768px) {
-  .Character {
+  .CharacterListItem {
     width: 25%;
   }
 }
 
 @media only screen and (min-width: 992px) {
-  .Character {
+  .CharacterListItem {
     margin-bottom: 50px;
   }
   
-  .Character:hover {
+  .CharacterListItem:hover {
     transform: scale(1.1);
   }
 }
 
 @media only screen and (min-width: 1200px) {
-  .Character {
+  .CharacterListItem {
     width: 28%;
   }
 }
