@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-import { CharacterListItem, Loading } from '../';
+import { CharacterListItem, Loading, Button } from '../';
 
 import { getData } from '../../helpers';
 
@@ -52,11 +52,10 @@ const CharacterList = () => {
               }
             </div>
             <div className='CharacterList__footer'>
-              <button
+              <Button
+                label='Load more'
                 onClick={handlerLoadMore}
-                className='CharacterList__footer__loadMore'
-              >Load more
-              </button>
+              />
             </div>
           </>
           : <Loading />
