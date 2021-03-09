@@ -7,7 +7,7 @@ const Character = ({ character }) => {
   return (
     <div className='Character'>
       <div className='Character__header'>
-        <a href={`/character-details/${character.name}`} className='Character__header__title'>
+        <a href={`/character-details/${character.id}/${character.name}`} className='Character__header__title'>
           <h2 className='Character__header__title__name'>{character.name}</h2>
         </a>
       </div>

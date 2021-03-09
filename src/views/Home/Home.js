@@ -14,9 +14,6 @@ const Home = () => {
       <div className='Home__body'>
         <CharacterList />
       </div>
-      <div className='Home__footer'>
-        <button className='Home__footer__loadMore'>Load more</button>
-      </div>
     </div>
   )
 }

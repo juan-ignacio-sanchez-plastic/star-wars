@@ -7,15 +7,31 @@ import { getData } from '../../helpers';
 import './CharacterList.scss';
 
 const CharacterList = () => {
+  const [page, setPage] = useState(1)
+  const [nextPageExist, setNextPageExist] = useState(true);
   const [characters, setCharacters] = useState([]);
+
+  const handlerLoadMore = () => {
+    if (nextPageExist) setPage(page + 1);
+  }
 
   useEffect(() => {
     async function fetchData () {
-      const data = await getData('/people');
+      const data = await getData(`/people/?page=${page}`);
       setCharacters(data.results);
     }
     fetchData();
   }, []);
+
+  useEffect(() => {
+    if (!nextPageExist) return;
+    async function fetchData () {
+      const data = await getData(`/people/?page=${page}`);
+      if (!data.next) setNextPageExist(false);
+      setCharacters([...characters, ...data.results]);
+    }
+    fetchData();
+  }, [page]);
 
   return (
     <div className='CharacterList'>
@@ -24,8 +40,18 @@ const CharacterList = () => {
       </div>
       <div className='CharacterList__body'>
         {
-          characters.map((character, i) => <Character character={character} key={i} />)
+          characters.map((character, i) => {
+            character.id = i + 1;
+            return <Character character={character} key={character.id} />
+          })
         }
+      </div>
+      <div className='CharacterList__footer'>
+        <button
+          onClick={handlerLoadMore}
+          className='CharacterList__footer__loadMore'
+        >Load more
+        </button>
       </div>
     </div>
   )
