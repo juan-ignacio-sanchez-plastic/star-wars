@@ -3,6 +3,7 @@ import { useParams } from 'react-router';
 import moment from 'moment';
 
 import { getData } from '../../../helpers';
+import { Loading } from '../../';
 
 import './Character.scss';
 
@@ -65,7 +66,7 @@ const Character = () => {
               </div>
             </div>
           </>
-          : "Loading"
+          : <Loading />
       }
     </div>
   )

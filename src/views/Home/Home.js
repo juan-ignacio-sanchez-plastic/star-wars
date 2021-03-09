@@ -1,7 +1,7 @@
 import React from 'react';
 
 import logo from '../../assets/images/logo-star-wars.svg';
-import { CharacterList } from '../../components';
+import { CharacterList, Loading } from '../../components';
 
 import './Home.scss';
 

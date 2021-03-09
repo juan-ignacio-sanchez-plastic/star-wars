@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-import { CharacterListItem } from '../';
+import { CharacterListItem, Loading } from '../';
 
 import { getData } from '../../helpers';
 
@@ -10,6 +10,7 @@ const CharacterList = () => {
   const [page, setPage] = useState(1)
   const [nextPageExist, setNextPageExist] = useState(true);
   const [characters, setCharacters] = useState([]);
+  const [isLoaded, setIsLoaded] = useState(false);
 
   const handlerLoadMore = () => {
     if (nextPageExist) setPage(page + 1);
@@ -19,6 +20,7 @@ const CharacterList = () => {
     async function fetchData () {
       const data = await getData(`/people/?page=${page}`);
       setCharacters(data.results);
+      setIsLoaded(true);
     }
     fetchData();
   }, []);
@@ -35,24 +37,30 @@ const CharacterList = () => {
 
   return (
     <div className='CharacterList'>
-      <div className='CharacterList__header'>
-        <h1 className='CharacterList__header__title'>Star Wars Characters</h1>
-      </div>
-      <div className='CharacterList__body'>
-        {
-          characters.map((character, i) => {
-            character.id = i + 1;
-            return <CharacterListItem character={character} key={character.id} />
-          })
-        }
-      </div>
-      <div className='CharacterList__footer'>
-        <button
-          onClick={handlerLoadMore}
-          className='CharacterList__footer__loadMore'
-        >Load more
-        </button>
-      </div>
+      {
+        isLoaded
+          ? <>
+            <div className='CharacterList__header'>
+              <h1 className='CharacterList__header__title'>Star Wars Characters</h1>
+            </div>
+            <div className='CharacterList__body'>
+              {
+                characters.map((character, i) => {
+                  character.id = i + 1;
+                  return <CharacterListItem character={character} key={character.id} />
+                })
+              }
+            </div>
+            <div className='CharacterList__footer'>
+              <button
+                onClick={handlerLoadMore}
+                className='CharacterList__footer__loadMore'
+              >Load more
+              </button>
+            </div>
+          </>
+          : <Loading />
+      }
     </div>
   )
 }
