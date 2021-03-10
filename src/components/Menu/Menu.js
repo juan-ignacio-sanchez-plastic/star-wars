@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 import { Button, CircularButton } from '../';
 import { toggleFullScreen } from '../../helpers';
@@ -9,24 +9,34 @@ const AUDIO = new Audio('https://ht.mobile9.com/download/media/3/starwars-i_sfxz
 
 const Menu = () => {
   const [isPlayingAudio, setIsPlayingAudio] = useState(false);
+  const [isFullScreen, setIsFullScreen] = useState(false);
 
   const handlerFullExperience = () => {
-    AUDIO.loop = true;
-    AUDIO.currentTime = 0;
-    AUDIO.play();
-    toggleFullScreen();
-    setIsPlayingAudio(true);
+    if (isFullScreen) {
+      setIsFullScreen(false);
+    } else {
+      setIsFullScreen(true);
+    }
   }
 
   const handlerToggleAudio = () => {
-    if (isPlayingAudio) {
-      AUDIO.pause();
-      setIsPlayingAudio(false);
-    } else {
-      AUDIO.play();
-      setIsPlayingAudio(true);
-    }
+    isPlayingAudio ? setIsPlayingAudio(false) : setIsPlayingAudio(true);
   }
+
+  useEffect(() => {
+    if (isPlayingAudio) {
+      AUDIO.loop = true;
+      AUDIO.currentTime = 0;
+      AUDIO.play();
+    } else {
+      AUDIO.pause();
+    }
+  }, [isPlayingAudio]);
+
+  useEffect(() => {
+    toggleFullScreen();
+    isFullScreen ? setIsPlayingAudio(true) : setIsPlayingAudio(false);
+  }, [isFullScreen]);
 
   return (
     <div className='Menu'>
@@ -34,7 +44,7 @@ const Menu = () => {
       <ul>
         <li>
           <Button
-            label='Full Experience'
+            label={isFullScreen ? 'End Full Experience' : 'Full Experience'}
             onClick={handlerFullExperience}
             style={{ transform: `scale(0.5)` }}
           />
