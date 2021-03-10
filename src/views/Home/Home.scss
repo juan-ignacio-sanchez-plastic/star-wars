@@ -1,12 +1,21 @@
 .Home {
   padding: 50px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .Home__header {
-  text-align: center;
+  align-self: flex-start;
 }
 
-.Home__header__logo {
+.Home__body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.Home__body__logo {
   width: 100%;
 }
 
@@ -17,7 +26,7 @@
 }
 
 @media only screen and (min-width: 992px) {
-  .Home__header__logo {
+  .Home__body__logo {
     width: 20%;
   }
 
