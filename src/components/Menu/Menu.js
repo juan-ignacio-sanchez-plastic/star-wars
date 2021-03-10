@@ -41,16 +41,16 @@ const Menu = () => {
 
   return (
     <div className='Menu'>
-      <label>☰</label>
-      <ul>
-        <li>
+      <label className='Menu__label'>☰</label>
+      <ul className='Menu__container'>
+        <li className='Menu__container__items'>
           <Button
             label={isFullScreen ? 'End Full Experience' : 'Full Experience'}
             onClick={handlerFullExperience}
             style={{ transform: `scale(0.5)` }}
           />
         </li>
-        <li>
+        <li className='Menu__container__items'>
           <CircularButton
             label={isPlayingAudio ? '||' : '▷'}
             onClick={handlerToggleAudio}

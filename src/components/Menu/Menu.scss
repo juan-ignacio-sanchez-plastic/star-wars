@@ -23,7 +23,7 @@ $showMenu: false;
   }
 }
 
-label {
+.Menu__label {
   width: 100%;
   height: 100%;
   display: flex;
@@ -37,7 +37,7 @@ label {
   cursor: pointer;
 }
 
-ul {
+.Menu__container {
   display: flex;
   align-items: center;
   height: 100%;
@@ -50,7 +50,7 @@ ul {
   transition: all 1s cubic-bezier(0.82, 1.35, 1, 0.99);
 }
 
-li {
+.Menu__container__items {
   width: max-content;
   height: max-content;
   margin-left: -50px;
