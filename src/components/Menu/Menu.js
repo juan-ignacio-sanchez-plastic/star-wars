@@ -26,7 +26,7 @@ const Menu = () => {
   useEffect(() => {
     if (isPlayingAudio) {
       AUDIO.loop = true;
-      AUDIO.volume = 0.1;
+      AUDIO.volume = 0.15;
       AUDIO.currentTime = 0;
       AUDIO.play();
     } else {
