@@ -27,10 +27,6 @@
   align-items: center;
 }
 
-.Character__body__container {
-  padding-left: 20px;
-}
-
 .Character__body__picture {
   width: 80%;
   height: 30%;
@@ -38,20 +34,27 @@
   animation: CharacterImage .7s ease-in;
 }
 
-.Character__body__title {
+.Character__body__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.Character__body__container__title {
   margin-bottom: 0;
 }
 
-.Character__body__features {
+.Character__body__container__features {
   display: flex;
   justify-content: center;
   animation: CharacterFeatures .7s ease-in;
 
   ul {
     display: flex;
+    justify-content: center;
     flex-wrap: wrap;
     list-style: none;
-    padding-left: 10px;
+    padding: 0;
 
     li {
       list-style: none;
@@ -63,29 +66,38 @@
   }
 }
 
-.Character__body__filmsCount {
+.Character__body__container__filmsCount {
   margin-bottom: 0;
 }
 
-.Character__body__filmsList {
+.Character__body__container__filmsList {
   display: flex;
   flex-direction: column;
   animation: CharacterFilms .7s ease-in;
 
   ul {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
     list-style: none;
-    width: max-content;
-    padding-left: 10px;
+    padding: 0;
     
     li {
       padding: 10px 15px;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
       
       &:before {
         content: '🎬 ';
       }
 
-      .Character__body__filmsList__filmName {
+      .Character__body__container__filmsList__filmName {
         font-weight: 700;
+
+        &:after {
+          content: '\0000a0';
+        }
       }
     }
   }
@@ -125,13 +137,10 @@
   }
 }
 
-@media only screen and (min-width: 768px) {
-  
-}
-
 @media only screen and (min-width: 992px) {
   .Character__body {
     flex-direction: row;
+    align-items: flex-start;
     width: 60%;
   }
 
@@ -139,5 +148,28 @@
     width: 40%;
     height: 30%;
     border-radius: 50px;
+  }
+
+  .Character__body__container {
+    padding-left: 20px;
+    align-items: flex-start;
+  }
+
+  .Character__body__container__title {
+    margin: 0;
+  }
+  
+  .Character__body__container__features {
+    ul {
+      justify-content: flex-start;
+      padding-left: 10px;
+    }
+  }
+  
+  .Character__body__container__filmsList {
+    ul {
+      justify-content: flex-start;
+      padding-left: 10px;
+    }
   }
 }

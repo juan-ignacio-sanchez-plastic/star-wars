@@ -44,8 +44,8 @@ const Character = () => {
             <div className='Character__body'>
               <img className='Character__body__picture' src={character.image} alt='character picture' />
               <div className='Character__body__container'>
-                <h1 className='Character__body__title'>{character.name}</h1>
-                <div className='Character__body__features'>
+                <h1 className='Character__body__container__title'>{character.name}</h1>
+                <div className='Character__body__container__features'>
                   <ul>
                     <li>Height: {character.height} cm</li>
                     <li>Gender: {character.gender}</li>
@@ -56,14 +56,15 @@ const Character = () => {
                     <li>Birth year: {character.birth_year}</li>
                   </ul>
                 </div>
-                <h2 className='Character__body__filmsCount'>
+                <h2 className='Character__body__container__filmsCount'>
                   {character.films.length} {character.films.length === 1 ? 'Film' : 'Films'}
                 </h2>
-                <div className='Character__body__filmsList'>
+                <div className='Character__body__container__filmsList'>
                   <ul>
                     {
                       character.films.map((film, i) => <li key={i}>
-                        <span className='Character__body__filmsList__filmName'>{film.title}:</span>  {moment(film.release_date, 'YYYY').fromNow()}
+                        <span className='Character__body__container__filmsList__filmName'>
+                          {film.title}:</span>{moment(film.release_date, 'YYYY').fromNow()}
                       </li>)
                     }
                   </ul>
