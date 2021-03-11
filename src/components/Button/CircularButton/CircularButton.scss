@@ -1,0 +1,12 @@
+@use '../Button/Button.scss';
+
+.CircularButton {
+  @extend .Button;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+
+  &:before {
+    border-radius: 50%;
+  }
+}
