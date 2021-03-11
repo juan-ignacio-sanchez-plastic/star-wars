@@ -1,13 +1,29 @@
 .CharacterList__header__title {
   text-align: center;
+  animation: CharacterList__header__title 1.5s;
 }
 
 .CharacterList__body {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  animation: CharacterList__body 1.5s;
 }
 
 .CharacterList__footer {
   text-align: center;
+}
+
+@keyframes CharacterList__header__title {
+  0% {
+    transform: translateY(-100px) scale(0);
+    opacity: 0;
+  }
+}
+
+@keyframes CharacterList__body {
+  0% {
+    transform: translateY(100px);
+    opacity: 0;
+  }
 }
