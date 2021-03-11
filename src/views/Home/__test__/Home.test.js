@@ -1,5 +1,6 @@
 import React from 'react';
 import { render } from '@testing-library/react';
+import renderer from 'react-test-renderer';
 
 import Home from '../Home';
 
@@ -10,9 +11,9 @@ it('should render and unmount Home without crashing', () => {
 });
 
 it('should render Home with the correct content', () => {
-  const { getByAltText } = render(<Home />);
+  const tree = renderer.create(<Home />).toJSON();
 
-  getByAltText('star wars logo');
+  expect(tree).toMatchSnapshot();
 });
 
 window.HTMLMediaElement.prototype.load = () => { };
