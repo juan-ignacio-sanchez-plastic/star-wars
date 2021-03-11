@@ -12,6 +12,7 @@ Additional dependencies:
  - [moment](https://www.npmjs.com/package/moment): to format data.
  - [react-router-dom](https://www.npmjs.com/package/react-router-dom): to manipulate routes.
  - [sass](https://www.npmjs.com/package/sass): to style the project. 
+ - [react-test-renderer](https://www.npmjs.com/package/react-test-renderer): to snapshot testing.
 
 Responsive design.
 
