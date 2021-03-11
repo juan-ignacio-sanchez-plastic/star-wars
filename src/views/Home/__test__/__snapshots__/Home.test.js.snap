@@ -1,0 +1,77 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render Home with the correct content 1`] = `
+<div
+  className="Home"
+>
+  <div
+    className="Home__header"
+  >
+    <div
+      className="Menu"
+    >
+      <label
+        className="Menu__label"
+      >
+        ☰
+      </label>
+      <ul
+        className="Menu__container"
+      >
+        <li
+          className="Menu__container__items"
+        >
+          <button
+            className="Button"
+            onClick={[Function]}
+            style={
+              Object {
+                "transform": "scale(0.5)",
+              }
+            }
+          >
+            Full Experience
+          </button>
+        </li>
+        <li
+          className="Menu__container__items"
+        >
+          <button
+            className="CircularButton"
+            onClick={[Function]}
+            style={
+              Object {
+                "transform": "scale(0.5)",
+              }
+            }
+          >
+            ▷
+          </button>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div
+    className="Home__body"
+  >
+    <img
+      alt="star wars logo"
+      className="Home__body__logo"
+      src="logo-star-wars.svg"
+    />
+    <div
+      className="CharacterList"
+    >
+      <div
+        className="Loading"
+      >
+        <p
+          className="Loading__text"
+        >
+          Loading...
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+`;
