@@ -1,4 +1,4 @@
-import { getData } from './fetch/fetch';
+import { getListOfCharacters, getCharacter, getFilm } from './fetch/fetch';
 import { toggleFullScreen } from './fullScreen/fullScreen';
 
-export { getData, toggleFullScreen };
+export { getListOfCharacters, getCharacter, toggleFullScreen, getFilm };

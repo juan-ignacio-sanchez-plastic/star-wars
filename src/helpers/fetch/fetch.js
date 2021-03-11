@@ -9,4 +9,16 @@ function getData (endpoint) {
     })
 }
 
-export { getData };
+function getListOfCharacters (page) {
+  return getData(`/people/?page=${page}`);
+}
+
+function getCharacter (id) {
+  return getData(`/people/${id}`);
+}
+
+function getFilm (id) {
+  return getData(`/films/${id}`);
+}
+
+export { getData, getListOfCharacters, getCharacter, getFilm };

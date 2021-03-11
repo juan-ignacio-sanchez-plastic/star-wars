@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 
 import { CharacterListItem, Loading, Button } from '../';
 
-import { getData } from '../../helpers';
+import { getListOfCharacters } from '../../helpers';
 
 import './CharacterList.scss';
 
@@ -18,7 +18,7 @@ const CharacterList = () => {
 
   useEffect(() => {
     async function fetchData () {
-      const data = await getData(`/people/?page=${page}`);
+      const data = await getListOfCharacters(page);
       setCharacters(data.results);
       setIsLoaded(true);
     }
@@ -28,7 +28,7 @@ const CharacterList = () => {
   useEffect(() => {
     if (!nextPageExist) return;
     async function fetchData () {
-      const data = await getData(`/people/?page=${page}`);
+      const data = await getListOfCharacters(page);
       if (!data.next) setNextPageExist(false);
       setCharacters([...characters, ...data.results]);
     }

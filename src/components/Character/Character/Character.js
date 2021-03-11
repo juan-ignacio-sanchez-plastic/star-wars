@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router';
 import moment from 'moment';
 
-import { getData } from '../../../helpers';
+import { getCharacter, getFilm } from '../../../helpers';
 import { Loading } from '../../';
 
 import './Character.scss';
@@ -14,11 +14,11 @@ const Character = () => {
 
   useEffect(() => {
     async function fetchData () {
-      const characterData = await getData(`/people/${characterID}`);
+      const characterData = await getCharacter(characterID);
       const filmsData = await Promise.all(
         characterData.films.map(filmURL => {
           const filmID = filmURL.slice(-2, -1);
-          return getData(`/films/${filmID}`);
+          return getFilm(filmID);
         })
       )
       characterData.films = filmsData;
