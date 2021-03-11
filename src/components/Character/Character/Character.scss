@@ -1,3 +1,14 @@
+.Character {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.Character__header {
+  align-self: flex-start;
+  margin-bottom: 20px;
+}
+
 .Character__header a {
   text-decoration: none;
 
@@ -10,47 +21,155 @@
   text-decoration: underline;
 }
 
-.Character__body__title {
-  text-align: center;
+.Character__body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.Character__body__features {
+.Character__body__picture {
+  width: 80%;
+  height: 30%;
+  border-radius: 50px;
+  animation: CharacterImage .7s ease-in;
+}
+
+.Character__body__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.Character__body__container__title {
+  margin-bottom: 0;
+}
+
+.Character__body__container__features {
   display: flex;
   justify-content: center;
+  animation: CharacterFeatures .7s ease-in;
 
   ul {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
     list-style: none;
-    width: 50%;
+    padding: 0;
 
     li {
       list-style: none;
-      display: flex;
-      padding: 20px;
+      padding: 15px;
+      margin: 0 10px 10px 0px;
+      background-color: rgba(rgb(65, 64, 64), 0.3);
+      border-radius: 100px;
     }
   }
 }
 
-.Character__body__filmsCount {
-  text-align: center;
+.Character__body__container__filmsCount {
+  margin-bottom: 0;
 }
 
-.Character__body__filmsList {
+.Character__body__container__filmsList {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  animation: CharacterFilms .7s ease-in;
 
   ul {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
     list-style: none;
-    width: max-content;
     padding: 0;
     
     li {
+      padding: 10px 15px;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      
       &:before {
-        content: '-';
+        content: '🎬 ';
       }
+
+      .Character__body__container__filmsList__filmName {
+        font-weight: 700;
+
+        &:after {
+          content: '\0000a0';
+        }
+      }
+    }
+  }
+}
+
+@keyframes CharacterImage {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes CharacterFeatures {
+  0% {
+    transform: translate(-100px);
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes CharacterFilms {
+  0% {
+    transform: translateY(100px);
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .Character__body {
+    flex-direction: row;
+    align-items: flex-start;
+    width: 60%;
+  }
+
+  .Character__body__picture {
+    width: 40%;
+    height: 30%;
+    border-radius: 50px;
+  }
+
+  .Character__body__container {
+    padding-left: 20px;
+    align-items: flex-start;
+  }
+
+  .Character__body__container__title {
+    margin: 0;
+  }
+  
+  .Character__body__container__features {
+    ul {
+      justify-content: flex-start;
+      padding-left: 10px;
+    }
+  }
+  
+  .Character__body__container__filmsList {
+    ul {
+      justify-content: flex-start;
+      padding-left: 10px;
     }
   }
 }

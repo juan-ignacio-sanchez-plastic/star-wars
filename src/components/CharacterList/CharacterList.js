@@ -52,10 +52,13 @@ const CharacterList = () => {
               }
             </div>
             <div className='CharacterList__footer'>
-              <Button
-                label='Load more'
-                onClick={handlerLoadMore}
-              />
+              {
+                nextPageExist && <Button
+                  label='Load more'
+                  onClick={handlerLoadMore}
+                  className='CharacterList__footer__Button'
+                />
+              }
             </div>
           </>
           : <Loading />

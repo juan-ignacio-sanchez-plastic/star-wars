@@ -21,4 +21,16 @@ function getFilm (id) {
   return getData(`/films/${id}`);
 }
 
-export { getData, getListOfCharacters, getCharacter, getFilm };
+function getCharacterImage (id) {
+  const baseURL = 'https://akabab.github.io/starwars-api/api/id'; // As SWAPI (the required API) didn't have images I used this other API to get the images 
+
+  return fetch(`${baseURL}/${id}.json`)
+    .then(res => res.json())
+    .then(res => res.image)
+    .catch(err => {
+      console.error(`Error fetching ${baseURL}${endpoint}`);
+      console.error('Error: ', err);
+    })
+}
+
+export { getData, getListOfCharacters, getCharacter, getFilm, getCharacterImage };

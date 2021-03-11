@@ -6,7 +6,7 @@
 }
 
 .Home__header {
-  align-self: flex-start;
+  display: none;
 }
 
 .Home__body {
@@ -20,17 +20,22 @@
 }
 
 @media only screen and (min-width: 768px) {
-  .Home__header__logo {
+  .Home__body__logo {
     width: 30%;
   }
 }
 
 @media only screen and (min-width: 992px) {
-  .Home__body__logo {
-    width: 20%;
-  }
-
   .Home {
     padding: 50px;
+  }
+
+  .Home__header {
+    display: flex;
+    align-self: flex-start;
+  }
+
+  .Home__body__logo {
+    width: 20%;
   }
 }
