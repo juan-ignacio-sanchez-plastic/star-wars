@@ -23,7 +23,8 @@
 
 .Character__body {
   display: flex;
-  width: 60%;
+  flex-direction: column;
+  align-items: center;
 }
 
 .Character__body__container {
@@ -31,9 +32,10 @@
 }
 
 .Character__body__picture {
-  width: 40%;
+  width: 80%;
   height: 30%;
   border-radius: 50px;
+  animation: CharacterImage .7s ease-in;
 }
 
 .Character__body__title {
@@ -43,6 +45,7 @@
 .Character__body__features {
   display: flex;
   justify-content: center;
+  animation: CharacterFeatures .7s ease-in;
 
   ul {
     display: flex;
@@ -67,6 +70,7 @@
 .Character__body__filmsList {
   display: flex;
   flex-direction: column;
+  animation: CharacterFilms .7s ease-in;
 
   ul {
     list-style: none;
@@ -84,5 +88,56 @@
         font-weight: 700;
       }
     }
+  }
+}
+
+@keyframes CharacterImage {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes CharacterFeatures {
+  0% {
+    transform: translate(-100px);
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes CharacterFilms {
+  0% {
+    transform: translateY(100px);
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  
+}
+
+@media only screen and (min-width: 992px) {
+  .Character__body {
+    flex-direction: row;
+    width: 60%;
+  }
+
+  .Character__body__picture {
+    width: 40%;
+    height: 30%;
+    border-radius: 50px;
   }
 }
